@@ -1,9 +1,11 @@
 import express from "express";
 import cors from "cors";
 import path from "path";
+import logger from "morgan";
 
 const app = express();
 
+app.use(logger("dev"));
 app.use(
   cors({
     origin: process.env.CORS_ORIGIN,
